@@ -8,13 +8,11 @@ export interface BrandComponentProps {
 }
 
 const LoginLogo: FC<BrandComponentProps> = ({ className }) => {
-  return <img className={className} src="public/img/esper.png" alt="Grafana" />;
+  return <img className={className} src="public/img/esper.png" alt="Esper Telemetry" />;
 };
 
 const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
-  const theme = useTheme();
   const background = css`
-    background: url(public/img/login_background_${theme.isDark ? 'dark' : 'light'}.svg);
     background-size: cover;
   `;
 
@@ -22,7 +20,7 @@ const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
 };
 
 const MenuLogo: FC<BrandComponentProps> = ({ className }) => {
-  return <img className={className} src="public/img/esper.png" alt="Grafana" />;
+  return <img className={className} src="public/img/esper.png" alt="Esper Telemetry" />;
 };
 
 const LoginBoxBackground = () => {
