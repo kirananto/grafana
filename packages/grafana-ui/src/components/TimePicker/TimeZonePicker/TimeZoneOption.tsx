@@ -117,7 +117,7 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
     `,
     containerFocused: css`
       background: ${theme.colors.dropdownOptionHoverBg};
-      border-image: linear-gradient(#f05a28 30%, #fbca0a 99%);
+      border-image: linear-gradient(#6866bb 30%, #363482 99%);
       border-image-slice: 1;
       border-style: solid;
       border-top: 0;
