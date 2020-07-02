@@ -4,8 +4,8 @@ import { stylesFactory } from '@grafana/ui';
 
 export const cardStyle = stylesFactory((theme: GrafanaTheme, complete: boolean) => {
   const completeGradient = 'linear-gradient(to right, #5182CC 0%, #245BAF 100%)';
-  const darkThemeGradients = complete ? completeGradient : 'linear-gradient(to right, #f05a28 0%, #fbca0a 100%)';
-  const lightThemeGradients = complete ? completeGradient : 'linear-gradient(to right, #FBCA0A 0%, #F05A28 100%)';
+  const darkThemeGradients = complete ? completeGradient : 'linear-gradient(to right, #6866bb 0%, #363482 100%)';
+  const lightThemeGradients = complete ? completeGradient : 'linear-gradient(to right, #363482 0%, #6866bb 100%)';
 
   const borderGradient = theme.isDark ? darkThemeGradients : lightThemeGradients;
 

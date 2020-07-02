@@ -44,7 +44,7 @@ const getStyles = stylesFactory((theme: GrafanaTheme, complete: boolean) => {
     `,
     heading: css`
       text-transform: uppercase;
-      color: ${complete ? theme.palette.blue95 : '#FFB357'};
+      color: ${complete ? theme.palette.blue95 : '#6866f6'};
       margin-bottom: ${theme.spacing.md};
     `,
     title: css`
