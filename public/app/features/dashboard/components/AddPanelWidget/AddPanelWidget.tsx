@@ -194,7 +194,7 @@ const getStyles = stylesFactory((theme: GrafanaTheme) => {
       overflow: hidden;
       outline: 2px dotted transparent;
       outline-offset: 2px;
-      box-shadow: 0 0 0 2px black, 0 0 0px 4px #1f60c4;
+      box-shadow: 0 0 0 2px black, 0 0 0px 4px #9b6ad4;
       animation: ${pulsate} 2s ease infinite;
     `,
     actionsWrapper: css`

@@ -142,9 +142,9 @@ const buildNamedColorsPalette = () => {
   const LightRed = buildColorDefinition('red', 'light-red', ['#F2495C', '#FF7383']);
   const SuperLightRed = buildColorDefinition('red', 'super-light-red', ['#FF7383', '#FFA6B0']);
 
-  const BasicBlue = buildColorDefinition('blue', 'blue', ['#3274D9', '#5794F2'], true);
-  const DarkBlue = buildColorDefinition('blue', 'dark-blue', ['#1250B0', '#1F60C4']);
-  const SemiDarkBlue = buildColorDefinition('blue', 'semi-dark-blue', ['#1F60C4', '#3274D9']);
+  const BasicBlue = buildColorDefinition('blue', 'blue', ['#725cbd', '#5794F2'], true);
+  const DarkBlue = buildColorDefinition('blue', 'dark-blue', ['#1250B0', '#9b6ad4']);
+  const SemiDarkBlue = buildColorDefinition('blue', 'semi-dark-blue', ['#9b6ad4', '#725cbd']);
   const LightBlue = buildColorDefinition('blue', 'light-blue', ['#5794F2', '#8AB8FF']);
   const SuperLightBlue = buildColorDefinition('blue', 'super-light-blue', ['#8AB8FF', '#C0D8FF']);
 

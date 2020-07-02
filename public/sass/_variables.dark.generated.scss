@@ -16,8 +16,8 @@ $theme-name: dark;
 // New Colors
 // -------------------------
 $blue-light: #5794f2;
-$blue-base: #3274d9;
-$blue-shade: #1f60c4;
+$blue-base: #725cbd;
+$blue-shade: #9b6ad4;
 $red-base: #e02f44;
 $red-shade: #c4162a;
 $green-base: #299c46;
@@ -382,8 +382,8 @@ $panel-editor-viz-item-bg-hover: darken($blue-base, 46%);
 $panel-options-group-border: none;
 $panel-options-group-header-bg: #202226;
 
-$panel-grid-placeholder-bg: darken(#1f60c4, 30%);
-$panel-grid-placeholder-shadow: 0 0 4px #3274d9;
+$panel-grid-placeholder-bg: darken(#9b6ad4, 30%);
+$panel-grid-placeholder-shadow: 0 0 4px #725cbd;
 
 // logs
 $logs-color-unknown: $gray-2;
