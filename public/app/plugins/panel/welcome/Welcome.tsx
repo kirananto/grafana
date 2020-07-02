@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { css } from 'emotion';
 import { GrafanaTheme } from '@grafana/data';
 import { stylesFactory, useTheme } from '@grafana/ui';
-import lightBackground from './img/background_light.svg';
+// import lightBackground from './img/background_light.svg';
 
 const helpOptions = [
   { value: 0, label: 'Documentation', href: 'https://grafana.com/docs/grafana/latest' },
@@ -38,12 +38,11 @@ export const WelcomeBanner: FC = () => {
 };
 
 const getStyles = stylesFactory((theme: GrafanaTheme) => {
-  const backgroundImage = theme.isDark ? 'public/img/login_background_dark.svg' : lightBackground;
+  // const backgroundImage = theme.isDark ? 'public/img/login_background_dark.svg' : lightBackground;
 
   return {
     container: css`
       display: flex;
-      background: url(${backgroundImage}) no-repeat;
       background-size: cover;
       height: 100%;
       align-items: center;
