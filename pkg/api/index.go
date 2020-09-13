@@ -271,13 +271,15 @@ func (hs *HTTPServer) setIndexViewData(c *models.ReqContext) (*dtos.IndexViewDat
 	configNodes := []*dtos.NavLink{}
 
 	if c.OrgRole == models.ROLE_ADMIN {
-		configNodes = append(configNodes, &dtos.NavLink{
-			Text:        "Data Sources",
-			Icon:        "database",
-			Description: "Add and configure data sources",
-			Id:          "datasources",
-			Url:         setting.AppSubUrl + "/datasources",
-		})
+		if c.IsGrafanaAdmin {
+			configNodes = append(configNodes, &dtos.NavLink{
+				Text:        "Data Sources",
+				Icon:        "database",
+				Description: "Add and configure data sources",
+				Id:          "datasources",
+				Url:         setting.AppSubUrl + "/datasources",
+			})
+		}
 		configNodes = append(configNodes, &dtos.NavLink{
 			Text:        "Users",
 			Id:          "users",
@@ -288,23 +290,27 @@ func (hs *HTTPServer) setIndexViewData(c *models.ReqContext) (*dtos.IndexViewDat
 	}
 
 	if c.OrgRole == models.ROLE_ADMIN || (hs.Cfg.EditorsCanAdmin && c.OrgRole == models.ROLE_EDITOR) {
-		configNodes = append(configNodes, &dtos.NavLink{
-			Text:        "Teams",
-			Id:          "teams",
-			Description: "Manage org groups",
-			Icon:        "users-alt",
-			Url:         setting.AppSubUrl + "/org/teams",
-		})
+		if c.IsGrafanaAdmin {
+			configNodes = append(configNodes, &dtos.NavLink{
+				Text:        "Teams",
+				Id:          "teams",
+				Description: "Manage org groups",
+				Icon:        "users-alt",
+				Url:         setting.AppSubUrl + "/org/teams",
+			})
+		}
 	}
 
 	if c.OrgRole == models.ROLE_ADMIN {
-		configNodes = append(configNodes, &dtos.NavLink{
-			Text:        "Plugins",
-			Id:          "plugins",
-			Description: "View and configure plugins",
-			Icon:        "plug",
-			Url:         setting.AppSubUrl + "/plugins",
-		})
+		if c.IsGrafanaAdmin {
+			configNodes = append(configNodes, &dtos.NavLink{
+				Text:        "Plugins",
+				Id:          "plugins",
+				Description: "View and configure plugins",
+				Icon:        "plug",
+				Url:         setting.AppSubUrl + "/plugins",
+			})
+		}
 
 		configNodes = append(configNodes, &dtos.NavLink{
 			Text:        "Preferences",
@@ -313,13 +319,15 @@ func (hs *HTTPServer) setIndexViewData(c *models.ReqContext) (*dtos.IndexViewDat
 			Icon:        "sliders-v-alt",
 			Url:         setting.AppSubUrl + "/org",
 		})
-		configNodes = append(configNodes, &dtos.NavLink{
-			Text:        "API Keys",
-			Id:          "apikeys",
-			Description: "Create & manage API keys",
-			Icon:        "key-skeleton-alt",
-			Url:         setting.AppSubUrl + "/org/apikeys",
-		})
+		if c.IsGrafanaAdmin {
+			configNodes = append(configNodes, &dtos.NavLink{
+				Text:        "API Keys",
+				Id:          "apikeys",
+				Description: "Create & manage API keys",
+				Icon:        "key-skeleton-alt",
+				Url:         setting.AppSubUrl + "/org/apikeys",
+			})
+		}
 	}
 
 	if len(configNodes) > 0 {
@@ -367,7 +375,7 @@ func (hs *HTTPServer) setIndexViewData(c *models.ReqContext) (*dtos.IndexViewDat
 
 	data.NavTree = append(data.NavTree, &dtos.NavLink{
 		Text:         "Help",
-		SubTitle:     helpVersion,
+		SubTitle:     "Esper Telemetry V1", // TODO Changed by KIRAN
 		Id:           "help",
 		Url:          "#",
 		Icon:         "question-circle",
