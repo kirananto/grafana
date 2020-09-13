@@ -56,7 +56,7 @@ const UsersTable: FC<Props> = props => {
                 <OrgRolePicker value={user.role} onChange={newRole => onRoleChange(newRole, user)} />
               </td>
 
-              <td>
+              {/* <td>
                 <Button size="sm" variant="destructive" onClick={() => setShowRemoveModal(user.login)} icon="times" />
                 <ConfirmModal
                   body={`Are you sure you want to delete user ${user.login}?`}
@@ -68,7 +68,7 @@ const UsersTable: FC<Props> = props => {
                     onRemoveUser(user);
                   }}
                 />
-              </td>
+              </td> */}
             </tr>
           );
         })}

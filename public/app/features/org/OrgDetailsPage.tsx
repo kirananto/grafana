@@ -39,7 +39,7 @@ export class OrgDetailsPage extends PureComponent<Props> {
         <Page.Contents isLoading={isLoading}>
           {!isLoading && (
             <VerticalGroup>
-              <OrgProfile onSubmit={this.onUpdateOrganization} orgName={organization.name} />
+              {/* <OrgProfile onSubmit={this.onUpdateOrganization} orgName={organization.name} /> */}
               <SharedPreferences resourceUri="org" />
             </VerticalGroup>
           )}

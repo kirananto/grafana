@@ -20,6 +20,7 @@ export class UsersActionBar extends PureComponent<Props> {
   render() {
     const {
       canInvite,
+      IsGrafanaAdmin,
       externalUserMngLinkName,
       externalUserMngLinkUrl,
       searchQuery,
@@ -49,7 +50,7 @@ export class UsersActionBar extends PureComponent<Props> {
             </div>
           )}
           <div className="page-action-bar__spacer" />
-          {canInvite && <LinkButton href="org/users/invite">Invite</LinkButton>}
+          {canInvite && IsGrafanaAdmin && <LinkButton href="org/users/invite">Invite</LinkButton>}
           {externalUserMngLinkUrl && (
             <LinkButton href={externalUserMngLinkUrl} target="_blank" rel="noopener">
               {externalUserMngLinkName}
@@ -68,6 +69,7 @@ function mapStateToProps(state: any) {
     externalUserMngLinkName: state.users.externalUserMngLinkName,
     externalUserMngLinkUrl: state.users.externalUserMngLinkUrl,
     canInvite: state.users.canInvite,
+    IsGrafanaAdmin: state.userAdmin.user?.isGrafanaAdmin,
   };
 }
 
