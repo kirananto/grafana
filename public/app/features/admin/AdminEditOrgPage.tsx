@@ -26,9 +26,9 @@ const updateOrgUserRole = async (orgUser: OrgUser, orgId: UrlQueryValue) => {
   await getBackendSrv().patch('/api/orgs/' + orgId + '/users/' + orgUser.userId, orgUser);
 };
 
-const removeOrgUser = async (orgUser: OrgUser, orgId: UrlQueryValue) => {
-  return await getBackendSrv().delete('/api/orgs/' + orgId + '/users/' + orgUser.userId);
-};
+// const removeOrgUser = async (orgUser: OrgUser, orgId: UrlQueryValue) => {
+//   return await getBackendSrv().delete('/api/orgs/' + orgId + '/users/' + orgUser.userId);
+// };
 
 export const AdminEditOrgPage: FC = () => {
   const navIndex = useSelector((state: StoreState) => state.navIndex);
@@ -93,11 +93,11 @@ export const AdminEditOrgPage: FC = () => {
                   );
                   fetchOrgUsers();
                 }}
-                onRemoveUser={orgUser => {
-                  removeOrgUser(orgUser, orgId);
-                  setUsers(users.filter(user => orgUser.userId !== user.userId));
-                  fetchOrgUsers();
-                }}
+                // onRemoveUser={orgUser => {
+                //   removeOrgUser(orgUser, orgId);
+                //   setUsers(users.filter(user => orgUser.userId !== user.userId));
+                //   fetchOrgUsers();
+                // }}
               />
             )}
           </div>

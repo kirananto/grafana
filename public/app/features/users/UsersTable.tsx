@@ -1,19 +1,26 @@
-import React, { FC, useState } from 'react';
+import React, {
+  FC,
+  // useState
+} from 'react';
 import { OrgUser } from 'app/types';
 import { OrgRolePicker } from '../admin/OrgRolePicker';
-import { Button, ConfirmModal } from '@grafana/ui';
+// import { Button, ConfirmModal } from '@grafana/ui';
 import { OrgRole } from '@grafana/data';
 
 export interface Props {
   users: OrgUser[];
   onRoleChange: (role: OrgRole, user: OrgUser) => void;
-  onRemoveUser: (user: OrgUser) => void;
+  // onRemoveUser: (user: OrgUser) => void;
 }
 
 const UsersTable: FC<Props> = props => {
-  const { users, onRoleChange, onRemoveUser } = props;
+  const {
+    users,
+    onRoleChange,
+    // onRemoveUser
+  } = props;
 
-  const [showRemoveModal, setShowRemoveModal] = useState<string | boolean>(false);
+  // const [showRemoveModal, setShowRemoveModal] = useState<string | boolean>(false);
   return (
     <table className="filter-table form-inline">
       <thead>

@@ -21,7 +21,6 @@ exports[`Render should render List page 1`] = `
       showInvites={false}
     />
     <UsersTable
-      onRemoveUser={[Function]}
       onRoleChange={[Function]}
       users={Array []}
     />

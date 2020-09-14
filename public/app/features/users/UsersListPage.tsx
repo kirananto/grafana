@@ -8,7 +8,7 @@ import UsersActionBar from './UsersActionBar';
 import UsersTable from './UsersTable';
 import InviteesTable from './InviteesTable';
 import { Invitee, OrgUser, OrgRole } from 'app/types';
-import { loadInvitees, loadUsers, removeUser, updateUser } from './state/actions';
+import { loadInvitees, loadUsers, updateUser } from './state/actions';
 import { getNavModel } from 'app/core/selectors/navModel';
 import { getInvitees, getUsers, getUsersSearchQuery } from './state/selectors';
 import { setUsersSearchQuery } from './state/reducers';
@@ -24,7 +24,7 @@ export interface Props {
   loadInvitees: typeof loadInvitees;
   setUsersSearchQuery: typeof setUsersSearchQuery;
   updateUser: typeof updateUser;
-  removeUser: typeof removeUser;
+  // removeUser: typeof removeUser;
 }
 
 export interface State {
@@ -81,7 +81,7 @@ export class UsersListPage extends PureComponent<Props, State> {
         <UsersTable
           users={users}
           onRoleChange={(role, user) => this.onRoleChange(role, user)}
-          onRemoveUser={user => this.props.removeUser(user.userId)}
+          // onRemoveUser={user => this.props.removeUser(user.userId)}
         />
       );
     }
@@ -123,7 +123,7 @@ const mapDispatchToProps = {
   loadInvitees,
   setUsersSearchQuery,
   updateUser,
-  removeUser,
+  // removeUser,
 };
 
 export default hot(module)(connect(mapStateToProps, mapDispatchToProps)(UsersListPage));

@@ -14,6 +14,7 @@ export interface Props {
   showInvites: boolean;
   externalUserMngLinkUrl: string;
   externalUserMngLinkName: string;
+  IsGrafanaAdmin: boolean;
 }
 
 export class UsersActionBar extends PureComponent<Props> {
