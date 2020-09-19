@@ -1,8 +1,8 @@
 import React from 'react';
 import { EventsWithValidation, regexValidation, LegacyForms } from '@grafana/ui';
-const { Select, Input, FormField } = LegacyForms;
+const { Select, Input, FormField, Switch } = LegacyForms;
 import { ElasticsearchOptions } from '../types';
-import { DataSourceSettings, SelectableValue } from '@grafana/data';
+import { DataSourceSettings, onUpdateDatasourceJsonDataOptionChecked, SelectableValue } from '@grafana/data';
 
 const indexPatternTypes = [
   { label: 'No pattern', value: 'none' },
@@ -86,13 +86,13 @@ export const ElasticDetails = (props: Props) => {
                   onChange={option => {
                     const maxConcurrentShardRequests = getMaxConcurrenShardRequestOrDefault(
                       value.jsonData.maxConcurrentShardRequests,
-                      option.value
+                      option.value!
                     );
                     onChange({
                       ...value,
                       jsonData: {
                         ...value.jsonData,
-                        esVersion: option.value,
+                        esVersion: option.value!,
                         maxConcurrentShardRequests,
                       },
                     });
@@ -144,11 +144,29 @@ export const ElasticDetails = (props: Props) => {
             />
           </div>
         </div>
+        {value.jsonData.esVersion >= 70 && (
+          <div className="gf-form-group">
+            <div className="gf-form-inline">
+              <Switch
+                label="Include Frozen Indices"
+                checked={value.jsonData.includeFrozen ?? false}
+                onChange={onUpdateDatasourceJsonDataOptionChecked(
+                  {
+                    options: value,
+                    onOptionsChange: onChange,
+                  },
+                  'includeFrozen'
+                )}
+              />
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
 };
 
+// TODO: Use change handlers from @grafana/data
 const changeHandler = (
   key: keyof DataSourceSettings<ElasticsearchOptions>,
   value: Props['value'],
@@ -160,6 +178,7 @@ const changeHandler = (
   });
 };
 
+// TODO: Use change handlers from @grafana/data
 const jsonDataChangeHandler = (key: keyof ElasticsearchOptions, value: Props['value'], onChange: Props['onChange']) => (
   event: React.SyntheticEvent<HTMLInputElement | HTMLSelectElement>
 ) => {
@@ -179,10 +198,12 @@ const intervalHandler = (value: Props['value'], onChange: Props['onChange']) => 
 
   if (!database || database.length === 0 || database.startsWith('[logstash-]')) {
     let newDatabase = '';
+
     if (newInterval !== undefined) {
       const pattern = indexPatternTypes.find(pattern => pattern.value === newInterval);
+
       if (pattern) {
-        newDatabase = pattern.example;
+        newDatabase = pattern.example ?? '';
       }
     }
 
@@ -205,7 +226,7 @@ const intervalHandler = (value: Props['value'], onChange: Props['onChange']) => 
   }
 };
 
-function getMaxConcurrenShardRequestOrDefault(maxConcurrentShardRequests: number, version: number): number {
+function getMaxConcurrenShardRequestOrDefault(maxConcurrentShardRequests: number | undefined, version: number): number {
   if (maxConcurrentShardRequests === 5 && version < 70) {
     return 256;
   }

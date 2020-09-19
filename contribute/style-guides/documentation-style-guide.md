@@ -4,7 +4,7 @@ This style guide applies to all documentation created for Grafana products.
 
 For information about how to write technical documentation, we suggest reviewing the content of the [Google Technical Writing courses](https://developers.google.com/tech-writing).
 
-The [Divio documentation system](https://documentation.divio.com/) site is also a good resource.
+The [Divio documentation system](https://documentation.divio.com/) site and the [Vue writing principles](https://v3.vuejs.org/guide/contributing/writing-guide.html#principles) are also good resources.
 
 ## Contributing
 
@@ -60,6 +60,7 @@ The following sections provide general guidelines on topics specific to Grafana 
 * Do not use an ampersand (&) as an abbreviation for "and."
   - **Exceptions:** If an ampersand is used in the Grafana UI, then match the UI.
 * Avoid using internal slang and jargon in technical documentation.
+* Do not use two spaces after a period. Only add one space after each sentence. Do not add a space at the end of the paragraph.
 
 ### File naming conventions
 
@@ -113,6 +114,36 @@ When possible, use the exact title of the page or section you are linking to as 
 
 **Example**
 Refer to the [Documentation style guide](documentation-style-guide.md) for information about word usage and capitalization guidelines.
+
+### Notes, tips, cautions, and warnings
+
+Grafana documentation uses notes, tips, cautions, and warnings. Notes are the most common. The format for all of them is indented, bold, sentence case:
+
+```
+> **Note:**
+```
+
+#### Notes
+
+Notes provide additional information that the user should be extra aware of. For example:
+
+> **Note:** This page describes a feature for Grafana 7.0 beta.
+
+#### Tips
+
+Tips describe alternate or more efficient ways of doing things. Rarely used.
+
+#### Cautions
+
+Cautions warn the user that they should proceed with caution. Use cautions to emphasize the potential downside of a course of action.
+
+> **Caution:** If you turn off authentication requirements, then anyone can access your Grafana instance. This poses a considerable security risk.
+
+#### Warnings
+
+Warnings tell the user not to do something. For example:
+
+> **Warning:** Grafana does not back up your dashboards. If you delete a dashboard, then you might not be able to recover it.
 
 ### Command line examples
 

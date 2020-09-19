@@ -48,6 +48,8 @@ Improve an existing plugin with one of our guides:
 - [Add support for variables]({{< relref "add-support-for-variables.md" >}})
 - [Build a logs data source plugin]({{< relref "build-a-logs-data-source-plugin.md" >}})
 - [Build a streaming data source plugin]({{< relref "build-a-streaming-data-source-plugin.md" >}})
+- [Error handling]({{< relref "error-handling.md" >}})
+- [Working with data frames]({{< relref "working-with-data-frames.md" >}})
 
 ### Concepts
 
