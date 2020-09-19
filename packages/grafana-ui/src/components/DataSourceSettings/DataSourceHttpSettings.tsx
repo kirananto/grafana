@@ -150,7 +150,7 @@ export const DataSourceHttpSettings: React.FC<HttpSettingsProps> = props => {
             <div className="gf-form">
               <FormLabel
                 width={11}
-                tooltip="Quantum Proxy deletes forwarded cookies by default. Specify cookies by name that should be forwarded to the data source."
+                tooltip="Esper Quantum Proxy deletes forwarded cookies by default. Specify cookies by name that should be forwarded to the data source."
               >
                 Whitelisted Cookies
               </FormLabel>
