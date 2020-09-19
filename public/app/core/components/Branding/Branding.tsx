@@ -8,7 +8,7 @@ export interface BrandComponentProps {
 }
 
 const LoginLogo: FC<BrandComponentProps> = ({ className }) => {
-  return <img className={className} src="public/img/esper.svg" alt="Esper Telemetry" />;
+  return <img className={className} src="public/img/esper.svg" alt="Quantum" />;
 };
 
 const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
@@ -20,7 +20,7 @@ const LoginBackground: FC<BrandComponentProps> = ({ className, children }) => {
 };
 
 const MenuLogo: FC<BrandComponentProps> = ({ className }) => {
-  return <img className={className} src="public/img/esper.svg" alt="Esper Telemetry" />;
+  return <img className={className} src="public/img/esper.svg" alt="Quantum" />;
 };
 
 const LoginBoxBackground = () => {
@@ -36,8 +36,8 @@ export class Branding {
   static LoginBackground = LoginBackground;
   static MenuLogo = MenuLogo;
   static LoginBoxBackground = LoginBoxBackground;
-  static AppTitle = 'Esper Telemetry';
-  static LoginTitle = 'Esper Telemetry';
+  static AppTitle = 'Quantum';
+  static LoginTitle = 'Quantum';
   static GetLoginSubTitle = () => {
     const slogans = [
       "Don't get in the way of the data",

@@ -326,7 +326,7 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 
 	navTree = append(navTree, &dtos.NavLink{
 		Text:         "Help",
-		SubTitle:     "Esper Telemetry V1", // TODO Changed by KIRAN
+		SubTitle:     "Quantum V1", // TODO Changed by KIRAN
 		Id:           "help",
 		Url:          "#",
 		Icon:         "question-circle",

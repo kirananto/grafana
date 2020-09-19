@@ -9,7 +9,7 @@ export const WelcomeBanner: FC = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Welcome to Esper Telemetry</h1>
+      <h1 className={styles.title}>Welcome to Quantum</h1>
     </div>
   );
 };
